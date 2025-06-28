@@ -1,0 +1,45 @@
+\documentclass[12pt, a4paper, onecolumn, oneside]{report}
+\usepackage[indonesian,provide=*]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+
+\onehalfspacing
+
+% Paket tambahan lainnya tetap sama...
+
+% Paket tambahan untuk format akademik
+\usepackage{indentfirst}
+\usepackage[top=3cm, bottom=3cm, left=4cm, right=3cm]{geometry}
+\usepackage{fancyhdr}
+% \usepackage{enumitem}
+
+% Setup Header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\nouppercase{\leftmark}}
+
+\title{Pengembangan model prediksi kenaikan muka air laut (sea level rise) berdasarkan data Sea Level Anomaly menggunakan Long Short-Term Memory serta pemetaan wilayah terdampak menggunakan teknologi GIS di kawasan pesisir Jember.}
+\author{NAMA ANDA \\ NIM ANDA}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\listoffigures  % Opsional jika ada gambar
+\listoftables   % Opsional jika ada tabel
+
+% Memanggil file bab
+\input{chapters/bab1}
+
+% Contoh memanggil bab lain (buat file terpisah)
+% \input{chapters/bab2} 
+% \input{chapters/bab3}
+
+% Daftar Pustaka (sesuaikan dengan style yang diwajibkan)
+\bibliographystyle{unsrt}  % atau style lain seperti ieeetr
+\bibliography{references}  % file referensi.bib
+
+\end{document}

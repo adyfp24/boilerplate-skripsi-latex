@@ -1,0 +1,7 @@
+\babel@toc {indonesian}{}\relax 
+\contentsline {chapter}{\numberline {1}PENDAHULUAN}{4}{}%
+\contentsline {section}{\numberline {1.1}Latar Belakang}{4}{}%
+\contentsline {section}{\numberline {1.2}Rumusan Masalah}{4}{}%
+\contentsline {section}{\numberline {1.3}Batasan Penelitian}{5}{}%
+\contentsline {section}{\numberline {1.4}Tujuan Penelitian}{5}{}%
+\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{5}{}%

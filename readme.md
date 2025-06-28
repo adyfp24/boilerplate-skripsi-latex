@@ -1,0 +1,1 @@
+my template skripsi gweh, skripsi yang baik adalah skripsi yang di coding
