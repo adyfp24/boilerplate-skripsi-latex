@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage[authoryear]{natbib}
 
 \onehalfspacing
 
@@ -175,8 +176,11 @@ English abstract here...
 
 % ================= DAFTAR PUSTAKA =================
 \cleardoublepage
-\bibliographystyle{unsrt}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\bibliographystyle{apalike}  % Atau style lain sesuai ketentuan
 \bibliography{references}
+
 
 % ================= LAMPIRAN (JIKA ADA) =================
 \cleardoublepage

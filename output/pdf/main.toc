@@ -10,4 +10,5 @@
 \contentsline {section}{\numberline {1.3}Batasan Penelitian}{10}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Tujuan Penelitian}{10}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Manfaat Penelitian}{10}{section.1.5}%
+\contentsline {chapter}{DAFTAR PUSTAKA}{11}{section.1.5}%
 \contentsline {chapter}{LAMPIRAN}{12}{appendix*.10}%
