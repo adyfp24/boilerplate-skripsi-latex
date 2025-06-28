@@ -3,16 +3,16 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{hyperref}
 
 \onehalfspacing
 
-% Paket tambahan lainnya tetap sama...
-
-% Paket tambahan untuk format akademik
-\usepackage{indentfirst}
+% Format halaman
 \usepackage[top=3cm, bottom=3cm, left=4cm, right=3cm]{geometry}
 \usepackage{fancyhdr}
-% \usepackage{enumitem}
+\usepackage{indentfirst}
 
 % Setup Header
 \pagestyle{fancy}
@@ -20,26 +20,169 @@
 \fancyhead[R]{\thepage}
 \fancyhead[L]{\nouppercase{\leftmark}}
 
-\title{Pengembangan model prediksi kenaikan muka air laut (sea level rise) berdasarkan data Sea Level Anomaly menggunakan Long Short-Term Memory serta pemetaan wilayah terdampak menggunakan teknologi GIS di kawasan pesisir Jember.}
-\author{NAMA ANDA \\ NIM ANDA}
-\date{\today}
+% Format judul bab
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\centering}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+% ==============================================
+% DATA IDENTITAS SKRIPSI (EDIT INI)
+\newcommand{\judul}{LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISCING ELIT SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE}
+\newcommand{\maksud}{Diajukan untuk Memenuhi Sebagian Persyaratan\\Memperoleh Gelar Sarjana}
+\newcommand{\jeniskarya}{SKRIPSI}
+\newcommand{\nama}{NAMA LENGKAP ANDA}
+\newcommand{\nim}{NIM ANDA}
+\newcommand{\prodi}{PROGRAM STUDI ANDA}
+\newcommand{\fakultas}{FAKULTAS ANDA}
+\newcommand{\tahunterbit}{TAHUN}
+% ==============================================
 
 \begin{document}
 
-\maketitle
+% ================= HALAMAN SAMPUL =================
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    % Logo UNEJ
+    \includegraphics[width=5cm]{resources/images/logo_unej.png}\par
+    \vspace{1cm}
+    
+    % Judul
+    \textbf{\Large \judul} \par
+    \vspace{1.5cm}
+    
+    % Maksud Penelitian
+    \textbf{\maksud} \par
+    \vspace{1cm}
+    
+    % Jenis Karya Ilmiah
+    \textbf{\jeniskarya} \par
+    \vspace{1.5cm}
+    
+    % Identitas Mahasiswa
+    \textbf{\nama} \\
+    \textbf{\nim} \par
+    \vspace{1.5cm}
+    
+    % Institusi
+    \textbf{KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI} \\
+    \textbf{UNIVERSITAS JEMBER} \\
+    \textbf{\fakultas} \\
+    \textbf{\prodi} \\
+    \textbf{\tahunterbit}
+\end{titlepage}
+
+% ================= HALAMAN JUDUL =================
+\cleardoublepage
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    \textbf{\Large \judul} \par
+    \vspace{1.5cm}
+    
+    \textbf{\maksud} \par
+    \vspace{1cm}
+    
+    \textbf{\jeniskarya} \par
+    \vspace{1.5cm}
+    
+    Disusun oleh: \\
+    \textbf{\nama} \\
+    \textbf{\nim} \par
+    \vspace{1.5cm}
+    
+    \textbf{\fakultas} \\
+    \textbf{\prodi} \\
+    \textbf{UNIVERSITAS JEMBER} \\
+    \textbf{\tahunterbit}
+\end{titlepage}
+
+% ================= HALAMAN PERSEMBAHAN =================
+\cleardoublepage
+\chapter*{HALAMAN PERSEMBAHAN}
+\addcontentsline{toc}{chapter}{HALAMAN PERSEMBAHAN}
+Isi halaman persembahan...
+
+% ================= HALAMAN PERNYATAAN ORISINALITAS =================
+\cleardoublepage
+\chapter*{PERNYATAAN ORISINALITAS}
+\addcontentsline{toc}{chapter}{PERNYATAAN ORISINALITAS}
+\begin{center}
+    \textbf{\underline{SURAT PERNYATAAN}} \\
+    \textbf{KEASLIAN TULISAN}
+\end{center}
+
+\vspace{1cm}
+
+Yang bertanda tangan di bawah ini:
+
+Nama : \nama \\
+NIM : \nim \\
+Program Studi : \prodi \\
+Fakultas : \fakultas \\
+
+Dengan ini menyatakan bahwa karya ilmiah yang berjudul:
+
+\judul
+
+adalah benar-benar hasil karya sendiri dan bukan plagiasi...
+
+% ================= HALAMAN PERSETUJUAN =================
+\cleardoublepage
+\chapter*{HALAMAN PERSETUJUAN}
+\addcontentsline{toc}{chapter}{HALAMAN PERSETUJUAN}
+Isi halaman persetujuan...
+
+% ================= ABSTRAK =================
+\cleardoublepage
+\chapter*{ABSTRAK}
+\addcontentsline{toc}{chapter}{ABSTRAK}
+Isi abstrak dalam Bahasa Indonesia...
+
+\vspace{1cm}
+\textbf{Kata kunci}: Kata1, Kata2, Kata3
+
+% ================= ABSTRACT =================
+\cleardoublepage
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+English abstract here...
+
+\vspace{1cm}
+\textbf{Keywords}: Word1, Word2, Word3
+
+% ================= DAFTAR ISI & GAMBAR =================
+\cleardoublepage
 \tableofcontents
-\listoffigures  % Opsional jika ada gambar
-\listoftables   % Opsional jika ada tabel
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\listoftables
 
-% Memanggil file bab
+% ================= BAB-BAB SKRIPSI =================
+\cleardoublepage
 \input{chapters/bab1}
+\cleardoublepage
+\input{chapters/bab2}
+\cleardoublepage
+\input{chapters/bab3}
+\cleardoublepage
+\input{chapters/bab4}
+\cleardoublepage
+\input{chapters/bab5}
 
-% Contoh memanggil bab lain (buat file terpisah)
-% \input{chapters/bab2} 
-% \input{chapters/bab3}
+% ================= DAFTAR PUSTAKA =================
+\cleardoublepage
+\bibliographystyle{unsrt}
+\bibliography{references}
 
-% Daftar Pustaka (sesuaikan dengan style yang diwajibkan)
-\bibliographystyle{unsrt}  % atau style lain seperti ieeetr
-\bibliography{references}  % file referensi.bib
+% ================= LAMPIRAN (JIKA ADA) =================
+\cleardoublepage
+\appendix
+\chapter*{LAMPIRAN}
+\addcontentsline{toc}{chapter}{LAMPIRAN}
+Isi lampiran...
 
 \end{document}
