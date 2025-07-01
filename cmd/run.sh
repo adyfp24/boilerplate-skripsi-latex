@@ -13,12 +13,12 @@
 
 # Untuk Linux
 # Bersihkan dulu
-# bash ./cmd/clean.sh
+bash ./cmd/clean.sh
 
 # Build dokumen
-# bash ./cmd/build.sh
+bash ./cmd/build.sh
 
 # Versioning (patch version secara default)
-# bash ./cmd/version.sh
+bash ./cmd/version.sh
 
 echo "All processes completed!"

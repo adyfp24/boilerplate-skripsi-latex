@@ -9,6 +9,7 @@
             linkcolor=black,
             citecolor=black,
             urlcolor=blue]{hyperref}
+% \usepackage[authoryear]{natbib}
 \usepackage[authoryear]{natbib}
 
 \onehalfspacing
@@ -17,6 +18,7 @@
 \usepackage[top=3cm, bottom=3cm, left=4cm, right=3cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
+\usepackage{enumitem}
 
 % Setup Header
 \pagestyle{fancy}
@@ -26,19 +28,34 @@
 
 % Format judul bab
 \titleformat{\chapter}[display]
-{\normalfont\bfseries\centering}
-{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+  {\normalfont\bfseries\centering} 
+  {\MakeUppercase{\chaptertitlename\ \thechapter.}}
+  {1em}
+  {\fontsize{12pt}{14pt}\selectfont\MakeUppercase}
+
+% Format subjudul bab
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12pt}{14pt}\selectfont} 
+  {\thesection} 
+  {1em} 
+  {}
+
+%   Format jarak antar judul bab
+\titlespacing*{\section}
+  {0pt}{1.5ex plus .1ex minus .2ex}{1ex plus .1ex}
+
+
 
 % ==============================================
 % DATA IDENTITAS SKRIPSI (EDIT INI)
-\newcommand{\judul}{LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISCING ELIT SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE}
-\newcommand{\maksud}{Diajukan untuk Memenuhi Sebagian Persyaratan\\Memperoleh Gelar Sarjana}
-\newcommand{\jeniskarya}{SKRIPSI}
-\newcommand{\nama}{NAMA LENGKAP ANDA}
-\newcommand{\nim}{NIM ANDA}
-\newcommand{\prodi}{PROGRAM STUDI ANDA}
-\newcommand{\fakultas}{FAKULTAS ANDA}
-\newcommand{\tahunterbit}{TAHUN}
+\newcommand{\thetitle}{JUDUL SKRIPSI ANDA DI SINI} % Berbentuk frasa, tidak diawali dengan kata kerja, tidak lebih dari 15 kata 
+\newcommand{\theauthor}{Mawar Indah Berseri} % 
+\newcommand{\thenim}{200810201008} % 
+\newcommand{\thedegree}{\textbf{Sarjana}} % Sesuaikan dengan gelar yang diperoleh 
+\newcommand{\thestudyprogram}{\textless\textless NAMA PROGRAM STUDI\textgreater\textgreater} % [cite: 3, 11]
+\newcommand{\thetypeofreport}{SKRIPSI} % Sesuaikan: LAPORAN PRAKTIK KERJA LAPANGAN/ SKRIPSI/ TESIS/ DISERTASI 
+\newcommand{\thefaculty}{\textless\textless NAMA FAKULTAS\textgreater\textgreater} % [cite: 10]
+\newcommand{\theyear}{\textless\textless TAHUN\textgreater\textgreater} %
 % ==============================================
 
 \begin{document}
@@ -46,98 +63,182 @@
 % ================= HALAMAN SAMPUL =================
 \begin{titlepage}
     \centering
-    \vspace*{1cm}
-    
+    \vspace*{2cm} % Menyesuaikan sedikit jarak atas, bisa disesuaikan lagi
+
     % Logo UNEJ
-    \includegraphics[width=5cm]{resources/images/logo_unej.png}\par
+    \includegraphics[width=0.3\textwidth]{resources/images/logo_unej.png}\par % Menggunakan width relatif terhadap lebar teks
     \vspace{1cm}
-    
-    % Judul
-    \textbf{\Large \judul} \par
+
+    % Judul [cite: 1, 2]
+    {\bfseries\fontsize{14pt}{16pt}\selectfont \MakeUppercase{\thetitle}} % Bold 14pt, Huruf kapital, Spasi 1 (14pt/16pt) 
     \vspace{1.5cm}
-    
-    % Maksud Penelitian
-    \textbf{\maksud} \par
+
+    % Maksud Penelitian 
+    diajukan untuk memenuhi sebagian persyaratan memperoleh gelar \\\thedegree\ pada program studi \thestudyprogram. % Frasa sesuai dokumen 
     \vspace{1cm}
-    
-    % Jenis Karya Ilmiah
-    \textbf{\jeniskarya} \par
+
+    % Jenis Karya Ilmiah 
+    \textbf{\MakeUppercase{\thetypeofreport}} % Huruf kapital dan bold 
     \vspace{1.5cm}
-    
-    % Identitas Mahasiswa
-    \textbf{\nama} \\
-    \textbf{\nim} \par
-    \vspace{1.5cm}
-    
+
+    % Oleh 
+    Oleh \par % Ditambahkan "Oleh" 
+    \vspace{0.5cm}
+
+    % Identitas Mahasiswa [cite: 6, 7]
+    \textbf{\theauthor} \\ % Nama 
+    \textbf{\thenim} \par % NIM 
+    \vspace{2cm} % Jarak setelah identitas mahasiswa
+
     % Institusi
     \textbf{KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI} \\
     \textbf{UNIVERSITAS JEMBER} \\
-    \textbf{\fakultas} \\
-    \textbf{\prodi} \\
-    \textbf{\tahunterbit}
+    \textbf{\MakeUppercase{\thefaculty}} \\ 
+    \textbf{\MakeUppercase{\thestudyprogram}} \\ 
+    \textbf{JEMBER} \\
+    \textbf{\theyear} % 
 \end{titlepage}
 
 % ================= HALAMAN JUDUL =================
-\cleardoublepage
-\begin{titlepage}
-    \centering
-    \vspace*{1cm}
+% \cleardoublepage
+% \begin{titlepage}
+%     \centering
+%     \vspace*{1cm}
     
-    \textbf{\Large \judul} \par
-    \vspace{1.5cm}
+%     \textbf{\Large \judul} \par
+%     \vspace{1.5cm}
     
-    \textbf{\maksud} \par
-    \vspace{1cm}
+%     \textbf{\maksud} \par
+%     \vspace{1cm}
     
-    \textbf{\jeniskarya} \par
-    \vspace{1.5cm}
+%     \textbf{\jeniskarya} \par
+%     \vspace{1.5cm}
     
-    Disusun oleh: \\
-    \textbf{\nama} \\
-    \textbf{\nim} \par
-    \vspace{1.5cm}
+%     Disusun oleh: \\
+%     \textbf{\nama} \\
+%     \textbf{\nim} \par
+%     \vspace{1.5cm}
     
-    \textbf{\fakultas} \\
-    \textbf{\prodi} \\
-    \textbf{UNIVERSITAS JEMBER} \\
-    \textbf{\tahunterbit}
-\end{titlepage}
+%     \textbf{\fakultas} \\
+%     \textbf{\prodi} \\
+%     \textbf{UNIVERSITAS JEMBER} \\
+%     \textbf{\tahunterbit}
+% \end{titlepage}
 
 % ================= HALAMAN PERSEMBAHAN =================
 \cleardoublepage
-\chapter*{HALAMAN PERSEMBAHAN}
-\addcontentsline{toc}{chapter}{HALAMAN PERSEMBAHAN}
-Isi halaman persembahan...
+\chapter*{PERSEMBAHAN}
+\addcontentsline{toc}{chapter}{PERSEMBAHAN}
+Halaman persembahan berisi ucapan kepada siapa tugas akhir dipersembahkan dengan menggunakan bahasa baku dan tidak terkesan berlebihan.
+
+% ================= HALAMAN MOTTO =================
+\chapter*{MOTTO}
+\addcontentsline{toc}{chapter}{MOTTO}
+Halaman untuk menuliskan penyemangat mahasiswa dalam penyelesaian skripsi. Motto bisa dikarang sendiri oleh penulis, mengutip dari kitab suci, atau kata-kata dari tokoh yang menginspirasi.
+
 
 % ================= HALAMAN PERNYATAAN ORISINALITAS =================
 \cleardoublepage
 \chapter*{PERNYATAAN ORISINALITAS}
 \addcontentsline{toc}{chapter}{PERNYATAAN ORISINALITAS}
-\begin{center}
-    \textbf{\underline{SURAT PERNYATAAN}} \\
-    \textbf{KEASLIAN TULISAN}
-\end{center}
 
-\vspace{1cm}
+% Menghapus "SURAT PERNYATAAN KEASLIAN TULISAN" karena tidak ada di gambar baru
+% \begin{center}
+%     \textbf{\underline{SURAT PERNYATAAN}} \\
+%     \textbf{KEASLIAN TULISAN}
+% \end{center}
 
-Yang bertanda tangan di bawah ini:
+% Mengatur ulang spasi baris ke normal untuk bagian ini jika sebelumnya diatur 1.5
+% (Jika Anda memiliki \onehalfspacing global, Anda mungkin perlu mengatur ulang secara lokal)
+% \singlespacing % Opsional, jika Anda ingin bagian ini spasi tunggal dan sisanya beda
 
-Nama : \nama \\
-NIM : \nim \\
-Program Studi : \prodi \\
-Fakultas : \fakultas \\
+\vspace{0.5cm} % Spasi dari atas halaman
 
-Dengan ini menyatakan bahwa karya ilmiah yang berjudul:
+\noindent Saya yang bertanda tangan di bawah ini :
+\begin{itemize}
+    \item[] Nama \quad\quad: ................................................
+    \item[] NIM \quad\quad\quad: ................................................
+\end{itemize}
+% Menghapus Program Studi dan Fakultas karena tidak ada di gambar
+% Program Studi : \thestudyprogram \\
+% Fakultas : \thefaculty \\
 
-\judul
+\noindent Menyatakan dengan sesungguhnya bahwa skripsi yang berjudul: \textit{\thetitle} (tulisan judul menggunakan huruf miring title case)
+adalah benar-benar hasil karya sendiri, kecuali jika dalam pengutipan substansi disebutkan sumbernya, dan belum pernah diajukan pada institusi manapun, serta bukan karya jiplakan.
+Saya bertanggung jawab atas keabsahan dan kebenaran isinya sesuai dengan sikap ilmiah yang harus dijunjung tinggi.
+Demikian pernyataan ini saya buat dengan sebenarnya, tanpa adanya tekanan dan paksaan dari pihak manapun serta bersedia mendapat sanksi akademik jika ternyata di kemudian hari pernyataan ini tidak benar.
 
-adalah benar-benar hasil karya sendiri dan bukan plagiasi...
+\vspace{1.5cm} % Spasi sebelum tanggal dan tanda tangan
 
+\raggedleft Jember, (tanggal pernyataan dibuat)
+
+\raggedleft Yang menyatakan, \\
+\vspace{1cm} % Spasi untuk tanda tangan
+\raggedleft (tanda tangan) \\
+\raggedleft (Meterai Rp 10.000,00)
+
+\vspace{1cm} % Spasi antara meterai dan nama
+\raggedleft (nama) \\
+\raggedleft NIM ..........................
+\raggedright
+\clearpage
 % ================= HALAMAN PERSETUJUAN =================
 \cleardoublepage
 \chapter*{HALAMAN PERSETUJUAN}
 \addcontentsline{toc}{chapter}{HALAMAN PERSETUJUAN}
-Isi halaman persetujuan...
+
+\noindent Skripsi berjudul \textit{\thetitle} (cetak miring) telah diuji dan disetujui oleh \\
+\noindent Fakultas \underline{\hspace{4cm}} Universitas Jember pada: \\
+\noindent Hari \quad\quad\quad: Senin \\
+\noindent Tanggal \quad\quad: \underline{\hspace{0.8cm}} Februari 20XX \\
+\noindent Tempat \quad\quad: Fakultas \underline{\hspace{4cm}} Universitas Jember \\
+
+\vspace{0.5cm}
+\noindent Pembimbing \hfill Tanda Tangan \\
+
+\vspace{0.5cm} % Spasi sebelum Pembimbing Utama
+
+\noindent 1. Pembimbing Utama \\
+Nama \quad: \underline{\hspace{5cm}} \hfill (…………………….) \\
+NIP \quad\quad: \underline{\hspace{5cm}} \\
+
+\vspace{0.5cm} % Spasi sebelum Pembimbing Anggota (jika diperlukan)
+
+\noindent 2. Pembimbing Anggota (\textit{jika diperlukan}) \\
+Nama \quad: \underline{\hspace{5cm}} \hfill (…………………….) \\
+NIP \quad\quad: \underline{\hspace{5cm}} \\
+
+\vspace{1cm} % Spasi sebelum Penguji
+
+\noindent Penguji \\
+
+\vspace{0.5cm} % Spasi sebelum Penguji Utama
+
+\noindent 1. Penguji Utama \\
+Nama \quad: \underline{\hspace{5cm}} \hfill (…………………….) \\
+NIP \quad\quad: \underline{\hspace{5cm}} \\
+
+\vspace{0.5cm} % Spasi sebelum Penguji Anggota 1
+
+\noindent 2. Penguji Anggota 1 \\
+Nama \quad: \underline{\hspace{5cm}} \hfill (…………………….) \\
+NIP \quad\quad: \underline{\hspace{5cm}} \\
+
+\vspace{0.5cm} % Spasi sebelum Penguji Anggota 2 (jika diperlukan)
+
+\noindent 3. Penguji Anggota 2 (\textit{jika diperlukan}) \\
+Nama \quad: \underline{\hspace{5cm}} \hfill (…………………….) \\
+NIP \quad\quad: \underline{\hspace{5cm}} \\
+
+\vspace{1.5cm} % Spasi sebelum Catatan
+
+\noindent \textbf{Catatan:} \\
+\begin{enumerate}[label=\alph*)] % Menggunakan enumitem untuk label a) b)
+    \item Untuk tesis dan disertasi, jumlah pembimbing dan penguji menyesuaikan kebijakan program studi  \\
+    \item Khusus untuk disertasi, halaman pengesahan dapat ditambahkan tanda tangan dekan \\
+\end{enumerate}
+
+\clearpage
 
 % ================= ABSTRAK =================
 \cleardoublepage
@@ -166,23 +267,31 @@ English abstract here...
 \listoftables
 
 % ================= BAB-BAB SKRIPSI =================
+% BAB 1. PENDAHULUAN ================================
 \cleardoublepage
+\addcontentsline{toc}{chapter}{Bab 1. PENDAHULUAN}
 \input{chapters/bab1}
+
 \cleardoublepage
+\addcontentsline{toc}{chapter}{Bab 2. TINJAUAN TEORI}
 \input{chapters/bab2}
 \cleardoublepage
+
+\addcontentsline{toc}{chapter}{Bab 3. METODOLOGI PENELITIAN}
 \input{chapters/bab3}
 \cleardoublepage
+\addcontentsline{toc}{chapter}{Bab 4. HASIL DAN PEMBAHASAN}
 \input{chapters/bab4}
 \cleardoublepage
+\addcontentsline{toc}{chapter}{Bab 5. KESIMPULAN DAN SARAN}
 \input{chapters/bab5}
 
 % ================= DAFTAR PUSTAKA =================
 \cleardoublepage
 \renewcommand{\bibname}{DAFTAR PUSTAKA}
 \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
-\bibliographystyle{apalike}  % Atau style lain sesuai ketentuan
-\bibliography{references}
+\bibliographystyle{apalike}
+\bibliography{references}    
 
 
 % ================= LAMPIRAN (JIKA ADA) =================
